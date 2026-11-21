@@ -1,8 +1,7 @@
 # Mario Editor
 
 The active editor foundation is a standalone C++20 application using SDL3,
-SDL_Renderer3, and Dear ImGui docking. The Java/Gradle implementation remains
-in `app/` as a legacy reference and is not required for the C++ build.
+SDL_Renderer3, and Dear ImGui docking.
 
 ## Visual Studio 2022 WSL2 build
 
@@ -103,10 +102,9 @@ can also be embedded with `add_subdirectory`.
 
 ## Level format migration
 
-The reader accepts the original Java root-array `level.txt` format and
-preserves object IDs, component IDs, and unknown component JSON. Legacy
-absolute paths ending in `spritesheet.png` resolve to
-`assets/images/spritesheet.png`.
+The reader accepts the original root-array `level.txt` format and preserves
+object IDs, component IDs, and unknown component JSON. Legacy absolute paths
+ending in `spritesheet.png` resolve to `assets/images/spritesheet.png`.
 
 New saves use a versioned wrapper:
 
@@ -119,9 +117,7 @@ New saves use a versioned wrapper:
 
 Known sprite textures are written with the portable asset ID `spritesheet` and
 the relative path `assets/images/spritesheet.png`. The C++ reader accepts both
-the legacy array and this wrapper. The legacy Java reader does not understand
-the wrapper, so use the preserved Java code as reference rather than opening a
-C++-saved level in the old editor.
+the legacy array and this wrapper.
 
 ## Editor behavior
 
